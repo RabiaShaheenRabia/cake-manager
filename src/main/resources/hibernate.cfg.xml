@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" " http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.archive.autodetection">class,hbm</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password"></property>
+        <!--property name="hibernate.connection.url">jdbc:hsqldb:mem:db;hsqldb.write_delay=false;</property-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="connection.autocommit">true</property>
+
+        <property name="connection.url">jdbc:hsqldb:file:db/filedb;hsqldb.write_delay=false;</property>
+        <property name="hibernate.hbm2ddl.import_files">/import.sql</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.jdbc.batch_size">20</property>
+
+        <mapping class="com.waracle.cakemgr.entity.CakeEntity"></mapping>
+
+    </session-factory>
+</hibernate-configuration>
